@@ -1,0 +1,78 @@
+name: Moodle plugin checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  php-syntax:
+    name: PHP syntax (${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        php: ["8.1", "8.3"]
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - name: Lint plugin PHP
+        shell: bash
+        run: find . -type f -name "*.php" -not -path "./.git/*" -print0 | xargs -0 -r -n1 php -l
+
+  integration:
+    name: Moodle 5.3 integration
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    services:
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "1"
+          MYSQL_CHARACTER_SET_SERVER: utf8mb4
+          MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+        ports: ["3306:3306"]
+        options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          path: plugin
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: curl, dom, exif, fileinfo, gd, intl, mbstring, mysqli, soap, sodium, xml, xmlreader, zip
+          ini-values: max_input_vars=5000, memory_limit=768M
+          coverage: none
+      - name: Prepare Moodle Plugin CI
+        shell: bash
+        run: |
+          composer create-project --no-interaction --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^4
+          echo "$(pwd)/ci/bin" >> "$GITHUB_PATH"
+          echo "$(pwd)/ci/vendor/bin" >> "$GITHUB_PATH"
+          sudo locale-gen en_AU.UTF-8
+          echo "NVM_DIR=$HOME/.nvm" >> "$GITHUB_ENV"
+      - name: Add certificate and image-field dependencies
+        run: |
+          moodle-plugin-ci add-plugin --branch v5.0.10 moodleworkplace/moodle-tool_certificate
+          moodle-plugin-ci add-plugin --branch main 108design/moodle-customfield_courseimage
+      - name: Install native Moodle fixture
+        run: moodle-plugin-ci install --plugin ./plugin --db-host=127.0.0.1 --no-plugin-node
+        env:
+          DB: mariadb
+          MOODLE_BRANCH: MOODLE_503_STABLE
+      - name: Run only this plugin suite
+        run: moodle-plugin-ci phpunit --fail-on-warning --fail-on-risky --fail-on-skipped
