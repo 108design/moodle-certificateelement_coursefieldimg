@@ -22,10 +22,10 @@
  */
 defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'certificateelement_coursefieldimg';
-$plugin->version = 2026101502;
-$plugin->release = '0.1.2-beta';
+$plugin->version = 2026102901;
+$plugin->release = '1.0.0';
 $plugin->requires = 2024100700;
 $plugin->supported = [405, 503];
 $plugin->incompatible = 504;
-$plugin->maturity = MATURITY_BETA;
+$plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = ['tool_certificate' => 2025031804];

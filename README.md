@@ -1,6 +1,33 @@
 # Image from course field
 
 Use one Certificate manager template with a different signature or image for each course. Select an existing Text area course field or an optional Image field supplied by the separate Course image plugin.
+<details>
+<summary>Screenshots</summary>
+
+<table><tr><td><a href="https://raw.githubusercontent.com/108design/moodle-certificateelement_coursefieldimg/main/docs/screenshots/image-element.png"><img src="https://raw.githubusercontent.com/108design/moodle-certificateelement_coursefieldimg/main/docs/screenshots/image-element.png" alt="Course image selection and issued-image help" width="420"></a><br>Course image selection and issued-image help</td><td><a href="https://raw.githubusercontent.com/108design/moodle-certificateelement_coursefieldimg/main/docs/screenshots/course-certificate.png"><img src="https://raw.githubusercontent.com/108design/moodle-certificateelement_coursefieldimg/main/docs/screenshots/course-certificate.png" alt="A different course image on the same certificate template" width="420"></a><br>A different course image on the same certificate template</td></tr></table>
+
+</details>
+
+
+
+## Certificate Multitool set
+
+Use the text pair for course-managed wording and the image pair for course-specific pictures in a shared certificate template. Flexible Date supplies the date formatting. Choose the parts your workflow needs.
+
+| Plugin | Role and companion |
+| --- | --- |
+| [Certificate Multitool – Custom Field](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment. Pair it with Cert. Element for certificate output. |
+| [Certificate Multitool – Cert. Element](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Renders that course text and supplies the course HTML preview. Requires Custom Field and Certificate manager. |
+| [Course image](https://github.com/108design/moodle-customfield_courseimage) | Provides a single-image course field. Pair it with Course field image for certificate output. |
+| [Course field image](https://github.com/108design/moodle-certificateelement_coursefieldimg) | Places a course image on the certificate and preserves the issued image copy. Requires Certificate manager; it accepts Course image or a native textarea field with an internal image. |
+| [Flexible Date](https://github.com/108design/moodle-certificateelement_flexdate) | Formats certificate issue and expiry dates. Requires Certificate manager. |
+
+**Text pair:** install Custom Field and Cert. Element together for the course-text certificate workflow. **Image pair:** install Course image and Course field image together for the single-image upload workflow. The image element can also use a native textarea image without Course image. Course certificate is needed for course-based issuance and the text pair’s course HTML preview.
+
+### Moodle 5.3 qualification
+
+Moodle 5.3 integration is provisional: it has been tested with Certificate manager (tool_certificate) 5.0.10/5.0.11 outside those versions’ declared Moodle 5.0–5.2 support range. Check the compatibility of Certificate manager and, when used, Course certificate before deploying on Moodle 5.3. The course custom fields themselves do not require Certificate manager.
+
 
 ## Requirements and installation
 
@@ -8,7 +35,7 @@ Use one Certificate manager template with a different signature or image for eac
 - Install this plugin in admin/tool/certificate/element/coursefieldimg and complete the Moodle upgrade.
 - Optionally install customfield_courseimage in customfield/field/courseimage. It is not required for Text area fields.
 
-This is a beta release. Integration has been verified on Moodle 4.5 with Certificate manager 4.5.7 and on Moodle 5.3 with Certificate manager 5.0.10. The upstream Certificate manager 5.0.10 declares Moodle 5.0–5.2 support; the Moodle 5.3 result is this plugin's tested integration, not an upstream support statement. Validate the complete issuing workflow on your staging site before production use.
+This stable release has native Moodle 4.5 integration evidence and provisional Moodle 5.3 evidence. Moodle 5.3 integration is provisional: it has been tested with Certificate manager (tool_certificate) 5.0.10/5.0.11 outside those versions’ declared Moodle 5.0–5.2 support range. Check the compatibility of Certificate manager and, when used, Course certificate before deploying on Moodle 5.3. The course custom fields themselves do not require Certificate manager. Validate the complete issuing workflow on your staging site before production use.
 
 ## Use
 
@@ -31,3 +58,5 @@ Create a course field named **Speaker signature**. Give Course A and Course B di
 Copyright 2026 Andreas Giesen. See [GNU GPL v3 or later](LICENSE.md). Moodle and Certificate manager retain their respective licences.
 
 This release is available free of charge under the GNU GPL v3 or later.
+
+Available free of charge under the terms of the applicable license.
