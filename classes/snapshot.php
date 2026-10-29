@@ -25,7 +25,7 @@ defined('MOODLE_INTERNAL') || die();
 
 /** Immutable image copies keyed by native issue and original element IDs. */
 final class snapshot {
-    public const TABLE = 'certel_cfimg_snapshot';
+    public const TABLE = 'certificateelement_coursefieldimg_snapshot';
 
     /** Freeze all configured images, plus an issue-level marker, at most once. */
     public static function capture(int $issueid): void {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <XMLDB PATH="admin/tool/certificate/element/coursefieldimg/db" VERSION="20261015" COMMENT="Certificate course field image snapshots">
-  <TABLES><TABLE NAME="certel_cfimg_snapshot" COMMENT="Immutable per-issue image selection, including empty selections">
+  <TABLES><TABLE NAME="certificateelement_coursefieldimg_snapshot" COMMENT="Immutable per-issue image selection, including empty selections">
     <FIELDS>
       <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
       <FIELD NAME="issueid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
