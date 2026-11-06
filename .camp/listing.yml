@@ -1,0 +1,17 @@
+name: Course field image for Certificate manager
+summary: 108design's free GPL certificate element places a course-specific image or signature in a shared
+  Certificate manager template.
+category: Certificates
+description: |
+  Use one Certificate manager template with a different signature, logo or image for each course. Select a native Text area course field containing an internal Moodle image, or the single-image field supplied by the separate Certificate Multitool Image plugin (customfield_courseimage).
+
+  Configure position and dimensions in the certificate template. Setting one dimension to zero preserves the image's aspect ratio. The designer can preview a course you are allowed to edit; a real certificate uses the course supplied by the issuing plugin. Locally stored PNG, JPEG and GIF files are supported. External image URLs and SVG files are ignored.
+
+  New certificate issues retain their selected image, including an empty selection. Later course-field changes affect new issues; regeneration uses the saved image rather than silently substituting the current course image. A hidden course field can still be used in a recipient's certificate, so designers must select images intended for recipients.
+
+  Requires a compatible Certificate manager (tool_certificate). The customfield_courseimage companion is optional when using native Text area images. Check the parent's declared compatibility, particularly on Moodle 5.3: this plugin's integration evidence does not extend the parent's support declaration. Maintained by 108design and available free of charge under the GNU GPL v3 or later.
+labels:
+- fully-free
+links:
+  docs: https://github.com/108design/moodle-certificateelement_coursefieldimg/blob/main/README.md
+  issues: https://github.com/108design/moodle-certificateelement_coursefieldimg/issues
