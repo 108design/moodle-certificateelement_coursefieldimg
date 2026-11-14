@@ -38,3 +38,7 @@
 "/tests/integration_test.php" -export-ignore -export-subst
 "/tests/upgrade_test.php" -export-ignore -export-subst
 "/version.php" -export-ignore -export-subst
+"/docs/branding" export-ignore -export-subst
+"/docs/branding/marketplace-logo.png" export-ignore -export-subst
+"/docs/screenshots/certificate-image-designer.jpg" export-ignore -export-subst
+"/docs/screenshots/field-survey-certificate.png" export-ignore -export-subst
