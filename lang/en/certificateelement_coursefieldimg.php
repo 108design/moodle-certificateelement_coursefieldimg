@@ -25,14 +25,15 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
+
 $string['pluginname'] = 'Course field image for Certificate manager';
 $string['elementname'] = 'Image from course field';
 $string['choosefield'] = 'Choose an image or text area course field';
 $string['coursefield'] = 'Course field';
-$string['coursefield_help'] = 'Select an Image or Text area course field. Text areas use their first image; an unavailable first image does not select a later image. Only local Moodle PNG, JPEG and GIF files are supported, up to 10 MiB and 16 million pixels. External URLs and repository aliases are ignored.
+$string['coursefield_help'] = 'Select an image or text area course field. Text areas use their first image; an unavailable first image does not select a later image. Only local Moodle PNG, JPEG and GIF files are supported, up to 10 MiB and 16 million pixels. External URLs and repository aliases are ignored.
 
 Defaults apply only when no course value has been saved. Cleared values remain empty. Missing or invalid images do not prevent the certificate. A selected image appears in the PDF even if the course field is hidden: select only images intended for recipients.';
-$string['firstimage'] = 'For Text area fields, only the first image is used. An empty field or unavailable image is omitted from the certificate.';
+$string['firstimage'] = 'For text area fields, only the first image is used. An empty field or unavailable image is omitted from the certificate.';
 $string['previewcourse'] = 'Preview course';
 $string['previewcourse_help'] = 'Used only in the template designer and preview PDF. You must be allowed to update this course. Save the element after changing the preview course. Real issues always use the course assigned by the issuing plugin; issues without a course have no course-field image. For repeat tests, create a fresh issue because regeneration intentionally uses its saved image.';
 $string['previewplaceholder'] = 'Choose a preview course to display its image.';
@@ -44,7 +45,6 @@ $string['privacy:filename'] = 'Filename of the saved image, or an empty selectio
 $string['privacy:timecreated'] = 'Time the selection was saved.';
 $string['privacy:snapshots'] = 'Images retained for reproducible certificate issues.';
 $string['privacy:files'] = 'Private image copies associated with certificate issues.';
-
 $string['snapshots'] = 'Issued images';
 $string['snapshotssummary'] = 'A separate image copy is kept for each new issue.';
 $string['snapshots_help'] = 'The image, or its absence, is saved at issuance. Changing the course image affects fresh issues; regeneration uses the saved selection.

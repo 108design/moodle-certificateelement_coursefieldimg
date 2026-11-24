@@ -25,26 +25,26 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
+
 $string['pluginname'] = 'Kursfeld-Bild für Certificate manager';
 $string['elementname'] = 'Bild aus Kursfeld';
 $string['choosefield'] = 'Kursfeld vom Typ Bild oder Textbereich auswählen';
 $string['coursefield'] = 'Kursfeld';
-$string['coursefield_help'] = 'Wähle ein Bild- oder Textbereich-Kursfeld. Bei Textbereichen zählt das erste Bild; ist dieses nicht verfügbar, wird kein späteres Bild eingesetzt. Unterstützt werden lokale Moodle-Dateien vom Typ PNG, JPEG und GIF bis 10 MiB und 16 Millionen Pixel. Externe Adressen und Repository-Verknüpfungen werden ignoriert.
+$string['coursefield_help'] = 'Wählen Sie ein Bild- oder Textbereich-Kursfeld. Bei Textbereichen zählt das erste Bild; ist dieses nicht verfügbar, wird kein späteres Bild eingesetzt. Unterstützt werden lokale Moodle-Dateien vom Typ PNG, JPEG und GIF bis 10 MiB und 16 Millionen Pixel. Externe Adressen und Repository-Verknüpfungen werden ignoriert.
 
-Der Standardwert gilt nur ohne gespeicherten Kurswert. Bewusst geleerte Werte bleiben leer. Fehlende oder ungültige Bilder verhindern die Ausstellung nicht. Das Bild erscheint auch bei verborgenem Kursfeld im PDF: Wähle nur Bilder, die für die Empfänger bestimmt sind.';
+Der Standardwert gilt nur ohne gespeicherten Kurswert. Bewusst geleerte Werte bleiben leer. Fehlende oder ungültige Bilder verhindern die Ausstellung nicht. Das Bild erscheint auch bei verborgenem Kursfeld im PDF: Wählen Sie nur Bilder, die für die Empfänger/innen bestimmt sind.';
 $string['firstimage'] = 'Bei Textbereich-Feldern wird nur das erste Bild verwendet. Bei einem leeren Feld oder nicht verfügbaren Bild entfällt das Bild im Zertifikat.';
 $string['previewcourse'] = 'Vorschaukurs';
-$string['previewcourse_help'] = 'Gilt nur für den Template-Editor und das Vorschau-PDF. Du musst den Kurs bearbeiten dürfen. Speichere das Element nach einer Änderung des Vorschaukurses. Echte Ausstellungen verwenden immer den vom ausstellenden Plugin zugeordneten Kurs; ohne Kurs entfällt das Kursfeld-Bild. Erzeuge für Wiederholungstests eine frische Ausstellung, da eine Regeneration absichtlich das gesicherte Bild verwendet.';
-$string['previewplaceholder'] = 'Wähle einen Vorschaukurs, um dessen Bild anzuzeigen.';
-$string['invalidsize'] = 'Gib eine Größe zwischen 0 und 2000 mm ein. 0 steht für automatische Größe.';
-$string['privacy:userid'] = 'Empfänger des Zertifikats.';
+$string['previewcourse_help'] = 'Gilt nur für den Template-Editor und das Vorschau-PDF. Sie müssen den Kurs bearbeiten dürfen. Speichern Sie das Element nach einer Änderung des Vorschaukurses. Echte Ausstellungen verwenden immer den vom ausstellenden Plugin zugeordneten Kurs; ohne Kurs entfällt das Kursfeld-Bild. Erzeuge für Wiederholungstests eine frische Ausstellung, da eine Regeneration absichtlich das gesicherte Bild verwendet.';
+$string['previewplaceholder'] = 'Wählen Sie einen Vorschaukurs, um dessen Bild anzuzeigen.';
+$string['invalidsize'] = 'Geben Sie eine Größe zwischen 0 und 2000 mm ein. 0 steht für automatische Größe.';
+$string['privacy:userid'] = 'Empfänger/in des Zertifikats.';
 $string['privacy:issueid'] = 'Kennung der Zertifikatsausstellung.';
 $string['privacy:elementid'] = 'Kennung des Template-Elements; null markiert die gesicherte Ausstellung.';
 $string['privacy:filename'] = 'Dateiname der Bildkopie oder eine leere Auswahl.';
 $string['privacy:timecreated'] = 'Zeitpunkt der Sicherung.';
 $string['privacy:snapshots'] = 'Bildkopien für reproduzierbare Zertifikatsausstellungen.';
 $string['privacy:files'] = 'Private Bildkopien zu Zertifikatsausstellungen.';
-
 $string['snapshots'] = 'Ausgestellte Bilder';
 $string['snapshotssummary'] = 'Je neuer Ausstellung bleibt eine eigene Bildkopie erhalten.';
 $string['snapshots_help'] = 'Bei der Ausstellung wird das Bild oder sein Fehlen gesichert. Änderungen am Kursbild gelten für frische Ausstellungen; die Regeneration verwendet die gesicherte Auswahl.
