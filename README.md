@@ -64,3 +64,5 @@ Copyright 2026 Andreas Giesen. See [GNU GPL v3 or later](LICENSE.md). Moodle and
 This release is available free of charge under the GNU GPL v3 or later.
 
 Available free of charge under the terms of the applicable license.
+
+The 108design name and logo are subject to the [name and logo notice](TRADEMARKS.md).
