@@ -1,0 +1,34 @@
+<?php
+/**
+ * This file is part of Moodle - https://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+// Copyright (C) 2026 Andreas Giesen. See LICENSE.md.
+// SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * certificateelement_coursefieldimg.
+ * @package certificateelement_coursefieldimg
+ * @copyright 2026 Andreas Giesen <andreas@108design.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+defined('MOODLE_INTERNAL') || die();
+
+$string['coursefield_help'] = 'Wähle ein Bild- oder Textbereich-Kursfeld. Bei Textbereichen zählt das erste Bild; ist dieses nicht verfügbar, wird kein späteres Bild eingesetzt. Unterstützt werden lokale Moodle-Dateien vom Typ PNG, JPEG und GIF bis 10 MiB und 16 Millionen Pixel. Externe Adressen und Repository-Verknüpfungen werden ignoriert.
+
+Der Standardwert gilt nur ohne gespeicherten Kurswert. Bewusst geleerte Werte bleiben leer. Fehlende oder ungültige Bilder verhindern die Ausstellung nicht. Das Bild erscheint auch bei verborgenem Kursfeld im PDF: Wähle nur Bilder, die für die Empfänger/innen bestimmt sind.';
+$string['previewcourse_help'] = 'Gilt nur für den Template-Editor und das Vorschau-PDF. Du musst den Kurs bearbeiten dürfen. Speichere das Element nach einer Änderung des Vorschaukurses. Echte Ausstellungen verwenden immer den vom ausstellenden Plugin zugeordneten Kurs; ohne Kurs entfällt das Kursfeld-Bild. Erzeuge für Wiederholungstests eine frische Ausstellung, da eine Regeneration absichtlich das gesicherte Bild verwendet.';
+$string['previewplaceholder'] = 'Wähle einen Vorschaukurs, um dessen Bild anzuzeigen.';
+$string['invalidsize'] = 'Gib eine Größe zwischen 0 und 2000 mm ein. 0 steht für automatische Größe.';

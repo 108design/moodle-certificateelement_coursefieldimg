@@ -26,8 +26,8 @@
  */
 defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'certificateelement_coursefieldimg';
-$plugin->version = 2026112600;
-$plugin->release = '1.3.0';
+$plugin->version = 2026112700;
+$plugin->release = '1.4.0';
 $plugin->requires = 2024100700;
 $plugin->supported = [405, 503];
 $plugin->incompatible = 504;

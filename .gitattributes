@@ -34,6 +34,8 @@
 "/lang" -export-ignore -export-subst
 "/lang/de" -export-ignore -export-subst
 "/lang/de/certificateelement_coursefieldimg.php" -export-ignore -export-subst
+"/lang/de_du" -export-ignore -export-subst
+"/lang/de_du/certificateelement_coursefieldimg.php" -export-ignore -export-subst
 "/lang/en" -export-ignore -export-subst
 "/lang/en/certificateelement_coursefieldimg.php" -export-ignore -export-subst
 "/pix" -export-ignore -export-subst
